@@ -1,11 +1,14 @@
 class Solution:
-    def findContentChildren(self, g: list[int], s: list[int]) -> int:
+    def findContentChildren(self, g, s):
         g.sort()
         s.sort()
         
         i = 0
+        n = len(g)
         for cookie in s:
-            if i < len(g) and cookie >= g[i]:
-                i += 1  
+            if i == n:
+                break
+            if cookie >= g[i]:
+                i += 1
                 
         return i
